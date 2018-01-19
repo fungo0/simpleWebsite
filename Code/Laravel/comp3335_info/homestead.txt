@@ -1,0 +1,31 @@
+https://laravel.com/docs/5.5/homestead
+vagrant up
+vagrant ssh
+cd Code
+cd Laravel
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan cache:clear
+php artisan migrate   php artisan migrate:install
+exit
+vagrant reload --provision
+
+
+php artisan migrate:reset
+git pull origin ntk_branch
+php artisan migrate
+
+php artisan make:migration xxxx
+php artisan migrate
+git add .
+git commit -m "xxx"
+git push origin fung_branch
+
+php artisan migrate:reset --database=mysql1
+php artisan migrate --database=mysql1
+
+mysql -u homestead -p
+secret
+create database playground;
+show databases;
